@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Room Access Permissions | Blockchain Mini Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header><div><span class="eyebrow">DS 441 · BLOCKCHAIN</span><h1>Room Access Permissions</h1><p>Manage room access permissions with a smart contract on Ganache.</p></div><button id="connectBtn">Connect MetaMask</button></header>
+    <div class="stats"><div class="stat"><small>Connected wallet</small><strong id="account">Not connected</strong></div><div class="stat"><small>Chain ID</small><strong id="chain">—</strong></div><div class="stat"><small>Role</small><strong id="role">—</strong></div></div>
+    <section class="panel"><h2>1. Connect to Contract</h2><label>Contract Address (copy from Remix)</label><div class="inline"><input id="contractAddress" placeholder="0x..." autocomplete="off" /><button id="loadContractBtn">Load Contract</button></div><p class="hint">Use MetaMask on the Ganache network where the contract was deployed. Check the address after resetting Ganache.</p></section>
+    <div class="columns">
+      <section class="panel"><h2>2. Create Room (Admin)</h2><label>Room name</label><input id="newRoom" placeholder="Lab-A" /><button id="createBtn">Create room</button></section>
+      <section class="panel"><h2>3. Grant / Revoke Access (Admin)</h2><label>Room name</label><input id="permissionRoom" placeholder="Lab-A" /><label>User wallet address</label><input id="userAddress" placeholder="0x..." /><div class="inline"><button id="grantBtn">Grant access</button><button class="danger" id="revokeBtn">Revoke</button></div></section>
+    </div>
+    <section class="panel"><h2>4. Check Access Permissions</h2><div class="columns"><div><label>Room name</label><input id="checkRoom" placeholder="Lab-A" /></div><div><label>Wallet address to check</label><input id="checkAddress" placeholder="0x..." /></div></div><div class="inline"><button id="checkBtn">Check</button><button class="secondary" id="roomExistsBtn">Room Exists?</button></div><p id="result" class="result">Not checked</p></section>
+    <section class="panel"><h2>Transaction Log and Messages</h2><div id="log" class="log" aria-live="polite">Ready.</div></section>
+    <footer>Ganache Local Testnet · ethers.js · Solidity 0.8.x</footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
